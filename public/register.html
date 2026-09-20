@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create your account · SecureID</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <svg width="0" height="0" style="position:absolute">
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.7a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.8.3 1.7.5 2.6.7a2 2 0 0 1 1.9 2z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-eye-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.9 17.9A10 10 0 0 1 12 19c-6.5 0-10-7-10-7a18 18 0 0 1 5.1-5.9M9.9 4.2A9 9 0 0 1 12 4c6.5 0 10 7 10 7a18 18 0 0 1-2.2 3.2M14.1 14.1a3 3 0 1 1-4.2-4.2"/><path d="m2 2 20 20"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v4M12 16h.01"/></symbol>
+  </svg>
+
+  <div class="page">
+    <header class="topbar">
+      <div class="brand-wrap">
+        <a class="brand" href="/"><span class="brand-icon"><svg><use href="#i-shield"/></svg></span>SecureID</a>
+        <span class="step-title" id="stepTitle">1. Register - Details</span>
+      </div>
+      <ol class="stepper" id="stepper" aria-label="Registration progress">
+        <li data-step="1"><span aria-label="Step 1: Details">1</span></li>
+        <li data-step="2"><span aria-label="Step 2: Email">2</span></li>
+        <li data-step="3"><span aria-label="Step 3: Mobile">3</span></li>
+        <li data-step="4"><span aria-label="Step 4: MFA">4</span></li>
+        <li data-step="5"><span aria-label="Step 5: Done">5</span></li>
+      </ol>
+    </header>
+
+    <main class="card">
+      <button class="back" id="back" type="button" aria-label="Go back" hidden><svg><use href="#i-back"/></svg></button>
+
+      <section class="screen" data-screen="form">
+        <h1>Create your account</h1>
+        <p class="sub">Let's get you started</p>
+        <form id="registerForm" class="reg-grid" novalidate>
+          <div class="fields">
+            <label class="field"><span>Full Name</span>
+              <input name="fullName" type="text" placeholder="Priya Sharma" autocomplete="name" required></label>
+            <label class="field"><span>Email</span>
+              <input name="email" type="email" placeholder="priya.sharma@email.com" autocomplete="email" required></label>
+            <label class="field"><span>Mobile Number</span>
+              <span class="mobile-row">
+                <select name="countryCode" aria-label="Country code"><option>+91</option><option>+1</option><option>+44</option><option>+61</option></select>
+                <input name="mobile" type="tel" inputmode="numeric" placeholder="98765 43210" maxlength="10" autocomplete="tel-national" required>
+              </span></label>
+            <label class="field"><span>Password</span>
+              <span class="pw-row">
+                <input name="password" id="password" type="password" placeholder="••••••••••" autocomplete="new-password" required>
+                <button type="button" class="eye" id="togglePw" aria-label="Show password"><svg><use href="#i-eye"/></svg></button>
+              </span></label>
+          </div>
+          <aside class="rules-box">
+            <p class="rules-title">Password must contain:</p>
+            <ul class="rules" id="rules">
+              <li data-rule="len"><svg><use href="#i-check"/></svg>At least 8 characters</li>
+              <li data-rule="upper"><svg><use href="#i-check"/></svg>1 uppercase letter</li>
+              <li data-rule="num"><svg><use href="#i-check"/></svg>1 number</li>
+              <li data-rule="special"><svg><use href="#i-check"/></svg>1 special character</li>
+            </ul>
+          </aside>
+          <label class="check terms"><input name="agreeTerms" type="checkbox"><span>I agree to the <a href="#">Terms &amp; Conditions</a> and <a href="#">Privacy Policy</a></span></label>
+          <p class="form-error" id="formError" role="alert" hidden></p>
+          <button class="btn primary" type="submit" id="submitBtn">Create Account</button>
+          <p class="foot">Already have an account? <a href="/login.html">Login</a></p>
+        </form>
+      </section>
+
+      <section class="screen" data-screen="otp" hidden>
+        <div class="icon-circle" id="otpIcon"><svg><use href="#i-mail"/></svg></div>
+        <h1 id="otpTitle">Verify your email</h1>
+        <p class="sub"><span id="otpSub">We have sent a 6-digit code to</span><br><strong id="otpTarget"></strong></p>
+        <div class="otp-boxes" id="otpBoxes">
+          <input type="text" inputmode="numeric" maxlength="1" autocomplete="one-time-code" aria-label="Digit 1">
+          <input type="text" inputmode="numeric" maxlength="1" aria-label="Digit 2">
+          <input type="text" inputmode="numeric" maxlength="1" aria-label="Digit 3">
+          <input type="text" inputmode="numeric" maxlength="1" aria-label="Digit 4">
+          <input type="text" inputmode="numeric" maxlength="1" aria-label="Digit 5">
+          <input type="text" inputmode="numeric" maxlength="1" aria-label="Digit 6">
+        </div>
+        <p class="otp-error" id="otpError" role="alert" hidden></p>
+        <p class="muted" id="otpExpiry">Code expires in <strong id="otpTimer">02:45</strong></p>
+        <button class="link" type="button" id="resendLink">Resend code (00:25)</button>
+        <button class="btn primary" type="button" id="resendBtn" hidden>Resend New Code</button>
+        <p class="muted small" id="otpHelp">Didn't receive the code?</p>
+      </section>
+
+      <section class="screen" data-screen="mfa" hidden>
+        <div class="icon-circle"><svg><use href="#i-shield"/></svg></div>
+        <h1>Set up Multi-Factor Auth</h1>
+        <p class="sub">Add an extra layer of security to protect your account.</p>
+        <div class="options" id="mfaOptions">
+          <label class="option"><input type="radio" name="mfa" value="app" checked><span><strong>Authenticator App</strong><small>(Google Authenticator / Authy)</small></span></label>
+          <label class="option"><input type="radio" name="mfa" value="sms"><span><strong>SMS Authentication</strong><small>Receive codes on your mobile</small></span></label>
+          <label class="option"><input type="radio" name="mfa" value="email"><span><strong>Email Authentication</strong><small>Receive codes on your email</small></span></label>
+        </div>
+        <p class="form-error" id="mfaError" role="alert" hidden>Could not start authenticator setup. Please try again.</p>
+        <button class="btn primary" type="button" id="mfaContinue">Continue</button>
+      </section>
+
+      <section class="screen" data-screen="qr" hidden>
+        <h1>Scan QR Code</h1>
+        <p class="sub">Open your authenticator app and scan this QR code</p>
+        <div class="qr" id="qrBox"><canvas id="qrCanvas" width="180" height="180"></canvas></div>
+        <p class="muted small">Can't scan? <button class="link inline" type="button" id="showKey">Enter setup key</button></p>
+        <code class="setup-key" id="setupKey" hidden></code>
+        <div class="btn-row">
+          <button class="btn ghost" type="button" id="qrBack">Back</button>
+          <button class="btn primary" type="button" id="qrContinue">Continue</button>
+        </div>
+      </section>
+
+      <section class="screen" data-screen="success" hidden>
+        <div class="icon-circle green"><svg><use href="#i-check"/></svg></div>
+        <h1>Account created!</h1>
+        <p class="sub">Your account has been created successfully and MFA is enabled.</p>
+        <ul class="done-list">
+          <li><svg><use href="#i-check"/></svg>Email verified</li>
+          <li><svg><use href="#i-check"/></svg>Mobile verified</li>
+          <li><svg><use href="#i-check"/></svg>MFA enabled</li>
+        </ul>
+        <a class="btn primary" href="/login.html">Continue to Login</a>
+      </section>
+    </main>
+
+    <footer class="foot-note">© 2024 SecureID. All rights reserved.</footer>
+  </div>
+
+  <script src="/js/vendor/qrcode.min.js"></script>
+  <script src="/js/otp.js"></script>
+  <script src="/js/register.js"></script>
+</body>
+</html>

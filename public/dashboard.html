@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard · SecureID</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute">
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></symbol>
+  </svg>
+
+  <div class="page">
+    <header class="topbar keep">
+      <a class="brand" href="/"><span class="brand-icon"><svg><use href="#i-shield"/></svg></span>SecureID</a>
+      <button class="btn ghost small-btn" type="button" id="logoutBtn">Logout</button>
+    </header>
+
+    <main class="card dash">
+      <div class="icon-circle green"><svg><use href="#i-check"/></svg></div>
+      <h1>You are logged in</h1>
+      <p class="sub">This page is protected by your server-side session (HttpOnly cookie).</p>
+
+      <dl class="kv" id="me">
+        <dt>Name</dt><dd data-k="fullName">…</dd>
+        <dt>Email</dt><dd data-k="email">…</dd>
+        <dt>Mobile</dt><dd data-k="mobile">…</dd>
+        <dt>MFA</dt><dd data-k="mfa">…</dd>
+        <dt>Session expires</dt><dd data-k="expires">…</dd>
+      </dl>
+
+    </main>
+
+    <footer class="foot-note">© 2024 SecureID. All rights reserved.</footer>
+  </div>
+
+  <script src="/js/otp.js"></script>
+  <script src="/js/dashboard.js"></script>
+</body>
+</html>
