@@ -1,0 +1,14 @@
+{
+  "name": "secureid",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SecureID - IAM registration and login journey",
+  "main": "api/index.js",
+  "scripts": {
+    "start": "node -e \"require('./api/index').listen(3000, () => console.log('SecureID running on http://localhost:3000'))\"",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
